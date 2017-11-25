@@ -18,8 +18,7 @@ function get_gigs(city, category) {
     .then((listings) => {
       listings.forEach((listing) => {
 //        console.log(listing.date, listing.title, listing.url);
-    	  
-    	  
+    	      	  
     	  
     	  
         fs.appendFileSync('gigsnow.html', '<li><a href="' + listing.url + '">' + listing.date + ',' + listing.title + ',' + listing.url + '</a></li>\n');
