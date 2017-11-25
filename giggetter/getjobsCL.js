@@ -17,14 +17,16 @@ function get_gigs(city, category) {
     .search(options)
     .then((listings) => {
       listings.forEach((listing) => {
-        console.log(listing.date, listing.title, listing.url);
-        gigs = '<li><a href="' + listing.url + '">' + listing.date + ',' + listing.title + ',' + listing.url + '</a></li>\n';
-        
-        fs.appendFileSync('gigsnow.html', gigs);
+//        console.log(listing.date, listing.title, listing.url);
+    	  
+    	  
+    	  
+    	  
+        fs.appendFileSync('gigsnow.html', '<li><a href="' + listing.url + '">' + listing.date + ',' + listing.title + ',' + listing.url + '</a></li>\n');
 
         
       });
-      console.log(gigs);
+
     })
     .catch((err) => {
       console.log('oops!');
