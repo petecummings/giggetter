@@ -1,7 +1,7 @@
 
 function get_gigs(city, category) {
-	
-	
+
+
 	var fs = require('fs');
 
   var gigs = 'X';
@@ -18,12 +18,12 @@ function get_gigs(city, category) {
     .then((listings) => {
       listings.forEach((listing) => {
 //        console.log(listing.date, listing.title, listing.url);
-    	      	  
-    	  
-    	  
+
+
+
         fs.appendFileSync('gigsnow.html', '<li><a href="' + listing.url + '">' + listing.date + ',' + listing.title + ',' + listing.url + '</a></li>\n');
 
-        
+
       });
 
     })
@@ -44,12 +44,10 @@ for (i=0;i<cities.length;i++) {
 
 		page = get_gigs(cities[i], categories[j]);
 
-	
+
 	}
-	
+
 }
 
 var page = get_gigs('buffalo', 'sof');
 page += get_gigs('rochester', 'sof');
-
-
